@@ -1,0 +1,7 @@
+USE sitsem;
+CREATE TABLE IF NOT EXISTS programas (
+ id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(160) NOT NULL, descripcion TEXT NOT NULL, requisitos TEXT NOT NULL, fecha_inicio DATE NOT NULL, fecha_fin DATE NOT NULL, estado ENUM('activo','inactivo') NOT NULL DEFAULT 'activo', creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS convocatorias (
+ id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(160) NOT NULL, descripcion TEXT NOT NULL, requisitos TEXT NOT NULL, fecha_inicio DATE NOT NULL, fecha_fin DATE NOT NULL, cupo INT NOT NULL DEFAULT 0, estado ENUM('activo','inactivo') NOT NULL DEFAULT 'activo', creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

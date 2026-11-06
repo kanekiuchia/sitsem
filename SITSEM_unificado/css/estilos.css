@@ -1,0 +1,1147 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f3ef;
+    color: #222;
+}
+
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.encabezado {
+
+    height: 125px;
+    width: 100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #650019,
+            #8b0027,
+            #650019
+        );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 32px;
+
+    gap: 22px;
+
+}
+
+
+/* =====================================================
+   MUNICIPIO
+===================================================== */
+
+.municipio {
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    flex-shrink: 0;
+
+}
+
+
+.logo-municipio {
+
+    font-size: 52px;
+
+}
+
+
+.datos-municipio h2 {
+
+    font-size: 19px;
+
+    line-height: 1.15;
+
+}
+
+
+.datos-municipio p {
+
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    letter-spacing: 1.6px;
+
+}
+
+
+/* =====================================================
+   LÍNEA
+===================================================== */
+
+.linea {
+
+    width: 1px;
+
+    height: 76px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    flex-shrink: 0;
+
+}
+
+
+/* =====================================================
+   SITSEM
+===================================================== */
+
+.sitsem {
+
+    min-width: 300px;
+
+    flex-shrink: 0;
+
+}
+
+
+.sitsem h1 {
+
+    font-size: 39px;
+
+    line-height: 1;
+
+}
+
+
+.sitsem p {
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    margin-top: 4px;
+
+}
+
+
+.sitsem span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =====================================================
+   TARJETAS SUPERIORES
+===================================================== */
+
+.accesos {
+
+    margin-left: auto;
+
+    flex: 1;
+
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    align-items: center;
+
+    padding-left: 15px;
+
+}
+
+
+/* =====================================================
+   TARJETA
+===================================================== */
+
+.tarjeta {
+
+    width: 100%;
+
+    height: 68px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    border-radius: 9px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 7px;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0,0,0,.15);
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.tarjeta:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.tarjeta span {
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    margin-bottom: 5px;
+
+}
+
+
+.tarjeta p {
+
+    color: #333;
+
+    font-size: 10px;
+
+    line-height: 1.15;
+
+}
+
+
+/* =====================================================
+   CONTENIDO PRINCIPAL
+===================================================== */
+
+.principal {
+
+    min-height:
+        calc(100vh - 195px);
+
+    width: 100%;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.02)
+        ),
+
+        url("../img/fondo-login.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(580px, 1.65fr)
+        minmax(360px, .65fr);
+
+    gap: 32px;
+
+    padding:
+        32px
+        4.5%
+        28px;
+
+}
+
+
+/* =====================================================
+   PRESENTACIÓN
+===================================================== */
+
+.presentacion {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    min-width: 0;
+
+    padding-bottom: 12px;
+
+}
+
+
+/* =====================================================
+   MENSAJE
+===================================================== */
+
+.mensaje {
+
+    width: 100%;
+
+    max-width: 800px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.96),
+            rgba(255,255,255,.82)
+        );
+
+    padding:
+        28px
+        35px;
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 9px 25px
+        rgba(0,0,0,.10);
+
+}
+
+
+.mensaje h2 {
+
+    color: #650019;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 43px;
+
+    font-weight: normal;
+
+    line-height: 1.08;
+
+}
+
+
+.mensaje strong {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+.decoracion {
+
+    width: 130px;
+
+    height: 5px;
+
+    background:
+        #7b001f;
+
+    margin:
+        15px 0;
+
+    border-radius: 10px;
+
+}
+
+
+.mensaje p {
+
+    max-width: 760px;
+
+    font-size: 17px;
+
+    line-height: 1.48;
+
+}
+
+
+.texto-secundario {
+
+    margin-top: 13px;
+
+    font-size: 14px !important;
+
+    line-height: 1.4 !important;
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.contenedor-login {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.login {
+
+    width: 100%;
+
+    max-width: 410px;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border-radius: 21px;
+
+    padding:
+        27px
+        30px;
+
+    box-shadow:
+        0 14px 35px
+        rgba(50,0,10,.24);
+
+}
+
+
+/* =====================================================
+   CABECERA LOGIN
+===================================================== */
+
+.logo-login {
+
+    text-align: center;
+
+    color: #790020;
+
+    font-size: 34px;
+
+}
+
+
+.presidencia {
+
+    text-align: center;
+
+    color: #790020;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+}
+
+
+.login h3 {
+
+    text-align: center;
+
+    color: #790020;
+
+    font-size: 17px;
+
+    line-height: 1.15;
+
+    margin-top: 4px;
+
+}
+
+
+.onda {
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #76001e,
+            #c9a66b,
+            #76001e
+        );
+
+    margin:
+        14px 0;
+
+}
+
+
+.login > h1 {
+
+    text-align: center;
+
+    color: #790020;
+
+    font-size: 37px;
+
+}
+
+
+.login > h2 {
+
+    text-align: center;
+
+    color: #790020;
+
+    font-size: 18px;
+
+    margin-top: 3px;
+
+}
+
+
+.descripcion {
+
+    text-align: center;
+
+    margin-top: 7px;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+}
+
+
+/* =====================================================
+   COLORES
+===================================================== */
+
+.colores {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin:
+        11px 0;
+
+}
+
+
+.colores span {
+
+    width: 50px;
+
+    height: 5px;
+
+}
+
+
+.colores span:nth-child(1) {
+    background: #650019;
+}
+
+
+.colores span:nth-child(2) {
+    background: #c5a46d;
+}
+
+
+.colores span:nth-child(3) {
+    background: #9b0035;
+}
+
+
+.direccion {
+
+    text-align: center;
+
+    margin-bottom: 17px;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   FORMULARIO
+===================================================== */
+
+form label {
+
+    display: block;
+
+    margin:
+        9px 0 5px;
+
+    font-weight: bold;
+
+    font-size: 12px;
+
+}
+
+
+.campo {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.campo > span {
+
+    position: absolute;
+
+    left: 13px;
+
+    font-size: 17px;
+
+}
+
+
+.campo input {
+
+    width: 100%;
+
+    height: 43px;
+
+    padding:
+        10px 40px;
+
+    border:
+        1px solid #d5d5d5;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: .3s;
+
+}
+
+
+.campo input:focus {
+
+    border-color:
+        #810024;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(129,0,36,.10);
+
+}
+
+
+.mostrar {
+
+    position: absolute;
+
+    right: 10px;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+
+/* =====================================================
+   OPCIONES
+===================================================== */
+
+.opciones {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin:
+        13px 0;
+
+}
+
+
+.recordar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 11px;
+
+}
+
+
+.opciones a {
+
+    color: #790020;
+
+    font-size: 11px;
+
+    text-decoration: underline;
+
+}
+
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.btn-login {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 13px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #72001e,
+            #9d0031,
+            #72001e
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.btn-login:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 6px 14px
+        rgba(110,0,30,.30);
+
+}
+
+
+/* =====================================================
+   MENSAJE
+===================================================== */
+
+#mensaje {
+
+    text-align: center;
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    min-height: 16px;
+
+}
+
+
+/* =====================================================
+   SEGURIDAD
+===================================================== */
+
+.seguridad {
+
+    margin-top: 17px;
+
+    padding-top: 11px;
+
+    border-top:
+        1px solid #ddd;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 10px;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    min-height: 72px;
+
+    background:
+        #650019;
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    align-items: center;
+
+    padding:
+        13px
+        35px;
+
+    font-size: 12px;
+
+}
+
+
+footer div {
+
+    padding:
+        0 18px;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,.3);
+
+    line-height: 1.4;
+
+}
+
+
+footer div:last-child {
+
+    border-right: none;
+
+}
+
+
+/* =====================================================
+   PANTALLAS MEDIANAS
+===================================================== */
+
+@media(max-width:1250px) {
+
+
+    .encabezado {
+
+        padding:
+            12px 20px;
+
+        gap: 15px;
+
+    }
+
+
+    .logo-municipio {
+
+        font-size: 44px;
+
+    }
+
+
+    .datos-municipio h2 {
+
+        font-size: 16px;
+
+    }
+
+
+    .sitsem {
+
+        min-width: 255px;
+
+    }
+
+
+    .sitsem h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .sitsem p {
+
+        font-size: 11px;
+
+    }
+
+
+    .tarjeta {
+
+        height: 64px;
+
+    }
+
+
+    .tarjeta span {
+
+        font-size: 20px;
+
+    }
+
+
+    .tarjeta p {
+
+        font-size: 9px;
+
+    }
+
+
+    .principal {
+
+        grid-template-columns:
+            minmax(500px, 1.6fr)
+            minmax(340px, .7fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1050px) {
+
+
+    .encabezado {
+
+        height: auto;
+
+        min-height: 125px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .accesos {
+
+        width: 100%;
+
+        flex-basis: 100%;
+
+        height: 68px;
+
+    }
+
+
+    .principal {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .presentacion {
+
+        order: 2;
+
+    }
+
+
+    .contenedor-login {
+
+        order: 1;
+
+    }
+
+
+    .login {
+
+        max-width: 460px;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media(max-width:700px) {
+
+
+    .encabezado {
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .municipio {
+
+        display: none;
+
+    }
+
+
+    .linea {
+
+        display: none;
+
+    }
+
+
+    .sitsem {
+
+        min-width: auto;
+
+        text-align: center;
+
+    }
+
+
+    .sitsem h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .accesos {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        height: auto;
+
+        gap: 8px;
+
+    }
+
+
+    .tarjeta {
+
+        height: 65px;
+
+    }
+
+
+    .principal {
+
+        padding:
+            20px 15px;
+
+    }
+
+
+    .mensaje {
+
+        padding:
+            23px 20px;
+
+    }
+
+
+    .mensaje h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .mensaje p {
+
+        font-size: 15px;
+
+    }
+
+
+    .login {
+
+        padding:
+            24px 20px;
+
+    }
+
+
+    footer {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+
+        text-align: center;
+
+    }
+
+
+    footer div {
+
+        border: none;
+
+    }
+
+}

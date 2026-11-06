@@ -1,0 +1,11 @@
+SITSEM UNIFICADO - MODULOS DE PROGRAMAS Y CONVOCATORIAS
+
+1. Copia la carpeta SITSEM_unificado dentro de C:\xampp\htdocs\SITSEM_tramites_API_MySQL\ (o dentro de htdocs, según la ruta que uses).
+2. Inicia Apache y MySQL desde XAMPP.
+3. Abre http://localhost/SITSEM_tramites_API_MySQL/SITSEM_unificado/index.html si esa es la carpeta donde colocaste el proyecto.
+4. Acceso de demostración: usuario admin, contraseña 12345.
+5. En el menú superior entra a Programas y apoyos o Convocatorias. Los formularios permiten registrar, listar, editar, activar/desactivar y eliminar.
+6. api_catalogos.php crea las tablas programas y convocatorias dentro de la base sitsem al hacer la primera petición. También se incluye tablas_programas_convocatorias.sql para revisar o ejecutar el SQL manualmente.
+
+IMPORTANTE: Abre el sistema mediante http://localhost/ y no con doble clic en index.html, porque fetch y PHP requieren servidor.
+El acceso actual sigue siendo demostrativo del lado del navegador; no es autenticación segura para producción. El endpoint de estos catálogos tampoco incorpora permisos de sesión de servidor. Utilízalo únicamente en el entorno local de prácticas.

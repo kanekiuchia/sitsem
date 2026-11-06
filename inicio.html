@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SITSEM | Panel administrativo</title>
+
+    <script>if (sessionStorage.getItem("sitsem_demo_login") !== "1") { window.location.replace("index.html"); }</script>
+    <!-- ESTILOS LOCALES -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="documentos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="topbar">
+
+        <div class="municipio">
+            <img src="assets/escudo.png"
+                 alt="Escudo municipal">
+
+            <div>
+                <strong>
+                    Santiago Tulantepec<br>
+                    de Lugo Guerrero
+                </strong>
+
+                <span>PRESIDENCIA MUNICIPAL</span>
+            </div>
+        </div>
+
+        <div class="brand">
+            <h1>SITSEM</h1>
+
+            <p>
+                Sistema Integral de Trámites y Servicios
+                Empresariales Municipales
+            </p>
+
+            <strong>
+                Dirección de Desarrollo Económico
+            </strong>
+        </div>
+
+        <div class="header-right">
+
+            <!-- BUSCADOR -->
+            <div class="search">
+                <span data-icon="search"></span>
+
+                <input
+                    id="search"
+                    type="search"
+                    placeholder="Buscar trámite, folio, empresa o ciudadano...">
+            </div>
+
+            <!-- NOTIFICACIONES -->
+            <button class="bell"
+                    id="bell"
+                    aria-label="Notificaciones">
+
+                <span data-icon="bell"></span>
+
+                <sup id="notificationCount" hidden>0</sup>
+            </button>
+
+            <!-- ADMINISTRADOR -->
+            <div class="user-wrap">
+
+                <button class="user"
+                        id="userButton"
+                        aria-expanded="false">
+
+                    <span class="avatar">
+                        <span data-icon="user-tie"></span>
+                    </span>
+
+                    <strong>Administrador</strong>
+
+                    <span data-icon="chevron-down"></span>
+                </button>
+
+                <div class="user-menu" id="userMenu">
+                    <button data-action="Mi perfil">
+                        Mi perfil
+                    </button>
+
+                    <button data-action="Configuración">
+                        Configuración
+                    </button>
+
+                    <button data-action="Cerrar sesión">
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MENÚ HORIZONTAL -->
+    <nav class="navbar" id="navbar">
+
+        <button class="active" data-module="Inicio">
+            <span data-icon="home"></span>
+            Inicio
+        </button>
+
+        <button data-module="Solicitudes">
+            <span data-icon="file"></span>
+            Solicitudes
+        </button>
+
+        <button data-module="Trámites y servicios">
+            <span data-icon="clipboard"></span>
+            Trámites y servicios
+        </button>
+
+        <button data-module="Programas y apoyos">
+            <span data-icon="users"></span>
+            Programas y apoyos
+        </button>
+
+        <button data-module="Convocatorias">
+            <span data-icon="megaphone"></span>
+            Convocatorias
+        </button>
+
+        <button data-module="Capacitaciones">
+            <span data-icon="graduation"></span>
+            Capacitaciones
+        </button>
+
+        <button data-module="Bolsa de trabajo">
+            <span data-icon="briefcase"></span>
+            Bolsa de trabajo
+        </button>
+
+        <button data-module="Empresas y negocios">
+            <span data-icon="building"></span>
+            Empresas y negocios
+        </button>
+
+        <button data-module="Reportes">
+            <span data-icon="chart"></span>
+            Reportes
+        </button>
+
+        <button data-module="Usuarios">
+            <span data-icon="user"></span>
+            Usuarios
+        </button>
+
+        <button data-module="Configuración">
+            <span data-icon="settings"></span>
+            Configuración
+        </button>
+
+    </nav>
+
+    <main>
+
+        <!-- BIENVENIDA -->
+        <section class="hero">
+
+            <div class="hero-copy">
+
+                <div class="leaf-decoration">❧</div>
+
+                <h2>Bienvenido</h2>
+
+                <h3>
+                    al sistema de administración municipal
+                </h3>
+
+                <div class="stripes">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <p>
+                    Gestiona trámites, solicitudes, programas<br>
+                    y servicios para el desarrollo económico<br>
+                    de Santiago Tulantepec de Lugo Guerrero.
+                </p>
+
+                <em>
+                    “Trabajamos por el desarrollo<br>
+                    económico de nuestro municipio”
+                </em>
+
+            </div>
+
+            <div class="hero-photo"
+                 role="img"
+                 aria-label="Presidencia Municipal">
+            </div>
+
+        </section>
+
+        <!-- PANEL PRINCIPAL -->
+        <section class="dashboard">
+
+            <!-- NOTIFICACIONES -->
+            <div class="panel notifications"
+                 id="notificationsPanel">
+
+                <div class="panel-heading">
+
+                    <h2>
+                        <span data-icon="bell"></span>
+                        Notificaciones
+                    </h2>
+
+                    <button class="view-all" id="viewAll">
+                        Ver todas
+                        <span data-icon="arrow-right"></span>
+                    </button>
+
+                </div>
+
+                <div class="notification-list"
+                     id="notificationList">
+                </div>
+
+            </div>
+
+            <!-- RESUMEN RÁPIDO -->
+            <div class="panel summary">
+
+                <div class="panel-heading">
+                    <h2>
+                        <span data-icon="chart"></span>
+                        Resumen rápido
+                    </h2>
+                </div>
+
+                <div class="stats" id="stats"></div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTENIDO DE LOS MODULOS ADMINISTRATIVOS -->
+        <section id="catalogModule" class="catalog-module" hidden>
+            <div class="catalog-header">
+                <div><p class="catalog-kicker">ADMINISTRACIÓN MUNICIPAL</p><h2 id="catalogTitle">Programas y apoyos</h2><p id="catalogDescription">Administra la información publicada.</p></div>
+                <button type="button" class="catalog-back" id="catalogBack">Volver al inicio</button>
+            </div>
+            <div id="catalogMessage" class="catalog-message" role="status" aria-live="polite"></div>
+            <div class="catalog-layout">
+                <form id="catalogForm" class="catalog-form">
+                    <h3 id="catalogFormTitle">Registrar programa</h3>
+                    <input type="hidden" id="catalogId">
+                    <div class="catalog-field"><label for="catalogName">Nombre *</label><input id="catalogName" maxlength="160" required></div>
+                    <div class="catalog-field"><label for="catalogDescriptionInput">Descripción *</label><textarea id="catalogDescriptionInput" rows="3" maxlength="2000" required></textarea></div>
+                    <div class="catalog-field"><label for="catalogRequirements">Requisitos *</label><textarea id="catalogRequirements" rows="3" maxlength="2000" required></textarea></div>
+                    <div class="catalog-dates">
+                        <div class="catalog-field"><label for="catalogStart">Fecha de inicio *</label><input id="catalogStart" type="date" required></div>
+                        <div class="catalog-field"><label for="catalogEnd">Fecha de cierre *</label><input id="catalogEnd" type="date" required></div>
+                    </div>
+                    <div class="catalog-field" id="catalogCapacityBox" hidden><label for="catalogCapacity">Cupo (personas)</label><input id="catalogCapacity" type="number" min="0" step="1" value="0"></div>
+                    <div class="catalog-field"><label for="catalogStatus">Estado</label><select id="catalogStatus"><option value="activo">Activo</option><option value="inactivo">Inactivo</option></select></div>
+                    <div class="catalog-actions"><button type="submit" id="catalogSave">Guardar</button><button type="button" class="catalog-cancel" id="catalogCancel">Limpiar</button></div>
+                </form>
+                <div class="catalog-list-panel">
+                    <div class="catalog-list-heading"><h3 id="catalogListTitle">Programas registrados</h3><button type="button" id="catalogRefresh">Actualizar lista</button></div>
+                    <div id="catalogList" class="catalog-list"><p class="catalog-empty">Cargando información...</p></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<section id="documentosSection" class="doc-section doc-hidden" aria-label="Documentación de solicitudes">
+<h2>Documentación del trámite empresarial</h2>
+<p>Registra los datos del solicitante y selecciona los archivos para su revisión.</p>
+<form id="documentosForm">
+<div class="doc-grid">
+<div class="doc-field"><label for="nombreSolicitante">Nombre del solicitante *</label><input id="nombreSolicitante" required maxlength="120"></div>
+<div class="doc-field"><label for="tipoPersona">Tipo de persona *</label><select id="tipoPersona"><option value="fisica">Persona física</option><option value="moral">Persona moral</option></select></div>
+<div class="doc-field"><label for="ineDoc">Identificación oficial (INE) *</label><input type="file" id="ineDoc" accept=".pdf,image/jpeg,image/png" required></div>
+<div class="doc-field"><label for="domicilioDoc">Comprobante de domicilio *</label><input type="file" id="domicilioDoc" accept=".pdf,image/jpeg,image/png" required><label for="fechaDomicilio">Fecha de emisión *</label><input type="date" id="fechaDomicilio" required><small>Antigüedad máxima: 3 meses.</small></div>
+<div class="doc-field"><label for="tenencia">Situación del inmueble *</label><select id="tenencia"><option value="renta">Rentado</option><option value="propio">Propio</option><option value="otro">Otra posesión</option></select></div>
+<div class="doc-field"><label id="propiedadLabel" for="propiedadDoc">Contrato de arrendamiento *</label><input type="file" id="propiedadDoc" accept=".pdf,image/jpeg,image/png" required></div>
+<div class="doc-field"><label for="croquisDoc">Croquis de ubicación *</label><input type="file" id="croquisDoc" accept=".pdf,image/jpeg,image/png" required></div>
+<div class="doc-field"><label for="fotosInterior">Fotografías del interior (si se requieren)</label><input type="file" id="fotosInterior" accept="image/jpeg,image/png" multiple></div>
+<div class="doc-field"><label for="fotosExterior">Fotografías del exterior (si se requieren)</label><input type="file" id="fotosExterior" accept="image/jpeg,image/png" multiple></div>
+<div class="doc-field"><label for="fiscalAplica">¿Se requiere documentación fiscal?</label><select id="fiscalAplica"><option value="no">No aplica</option><option value="si">Sí aplica</option></select></div>
+<div class="doc-field doc-hidden" id="fiscalBox"><label for="fiscalDoc">RFC / Constancia de Situación Fiscal *</label><input type="file" id="fiscalDoc" accept=".pdf,image/jpeg,image/png"></div>
+<div class="doc-field doc-hidden" data-moral><label for="actaDoc">Acta constitutiva *</label><input type="file" id="actaDoc" accept=".pdf,image/jpeg,image/png"></div>
+<div class="doc-field doc-hidden" data-moral><label for="poderDoc">Poder del representante legal *</label><input type="file" id="poderDoc" accept=".pdf,image/jpeg,image/png"></div>
+<div class="doc-field doc-hidden" data-moral><label for="representanteDoc">Identificación del representante legal *</label><input type="file" id="representanteDoc" accept=".pdf,image/jpeg,image/png"></div>
+</div><div class="doc-actions"><button type="submit">Revisar documentación</button><button type="reset" class="secondary">Limpiar formulario</button></div><div id="documentosEstado" class="doc-status" role="status" aria-live="polite"></div>
+</form></section>
+    <div class="toast"
+         id="toast"
+         role="status"
+         aria-live="polite">
+    </div>
+
+    <!-- JAVASCRIPT LOCAL -->
+    <script src="script.js"></script>
+    <script src="documentos.js"></script>
+
+</body>
+</html>
